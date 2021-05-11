@@ -1,6 +1,11 @@
-const Checkout  = () => {
+const Checkout  = ({history}) => {
+    function cancelCallback(){
+        history.replace('/')
+    }
     return ( 
-        <div>Checkout </div>
+        <div>
+            
+        </div>
      );
 }
  

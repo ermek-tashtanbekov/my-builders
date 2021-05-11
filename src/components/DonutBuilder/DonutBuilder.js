@@ -7,7 +7,7 @@ import DonutControls from "./DonutControls/DonutControls";
 import DonutPreview from "./DonutPreview/DonutPreview";
 import OrderSummary from "./OrderSummary/OrderSummary";
 
-const DonutBuilder = () => {
+const DonutBuilder = ({history}) => {
     const [ingredients, setIngredients] = useState({})
     const [price, setPrice] = useState(0);
     const [ordering, setOrdering] = useState(false);
@@ -56,6 +56,7 @@ const DonutBuilder = () => {
             .then(() => {
                 setOrdering(false);
                 loadDefaults()
+                history.push('/checkout');
             })
     }
 
