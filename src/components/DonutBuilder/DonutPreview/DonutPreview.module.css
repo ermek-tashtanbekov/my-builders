@@ -1,0 +1,18 @@
+.DonutPreview {
+    flex: 0 0 400px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    justify-content: center;  
+   margin-right: 15px;
+   align-items: center;
+    }
+    .plate{
+        width: 400px;
+        height: 400px;
+        border-radius: 100%;
+        position: relative;
+        background-size: cover;
+        margin-right: 18px;
+        background-position: center
+    }

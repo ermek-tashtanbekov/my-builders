@@ -1,0 +1,11 @@
+.DonutControls {
+    flex: 0 0 250px;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: rgb(74, 109, 204);
+    color: white;
+    text-align: center;
+    width: 450;
+    height: 550px;
+     
+    }
