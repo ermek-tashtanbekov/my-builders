@@ -19,15 +19,23 @@ const DonutBuilder = () => {
         pink: 25,
         violet: 47
     }
+    useEffect(loadDefaults, []);
+
+        function loadDefaults() {
+            axios
+                .get('https://work-1-b6be6-default-rtdb.firebaseio.com/defauld.json')
+                .then(response => {
+                    setPrice(response.data.price);
+    
+                    // For arrays
+                    // setIngredients(Object.values(response.data.ingredients));
+                    // For objects
+                    setIngredients(response.data.ingredients);
+                });
+        }
 
 
-    useEffect(() =>
-        axios.get('https://work-1-b6be6-default-rtdb.firebaseio.com/defauld.json')
-            .then(response => {
-                setPrice(response.data.price);
-                setIngredients(response.data.ingredients)
-            }), []
-    )
+
 
 
     function startOrdering() {
@@ -37,7 +45,19 @@ const DonutBuilder = () => {
     function stopOrdering() {
         setOrdering(false);
     }
-
+    function finishOrdering() {
+        axios.post('https://work-1-b6be6-default-rtdb.firebaseio.com/orders.json', {
+            ingredients: ingredients,
+            price: price,
+            address: "1234 Jusaeva str",
+            phone: "0 777 777 777",
+            name: "Sadyr Japarov",
+        })
+            .then(() => {
+                setOrdering(false);
+                loadDefaults()
+            })
+    }
 
     function addIngredient(type) {
         const newIngredients = { ...ingredients };
@@ -70,7 +90,7 @@ const DonutBuilder = () => {
                 <OrderSummary ingredients={ingredients} price={price} />
 
                 <div className={classes.Button}>
-                    <Button green>Checkout</Button>
+                    <Button onClick={() => finishOrdering()} green>Checkout</Button>
                     <Button onClick={() => stopOrdering()} >Cancel</Button>
                 </div>
             </Modal>
