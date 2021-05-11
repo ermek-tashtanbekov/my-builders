@@ -7,8 +7,8 @@ const Layout = ({ children }) => {
     return (
         <div>
 
-            <Toolbar openDrawer={() => setDrawerOpen(true)}/>
-            <Drawer open={drawerOepn} closeDrawer={() => setDrawerOpen(false)}  />
+            <Toolbar openDrawer={() => setDrawerOpen(true)} />
+            <Drawer open={drawerOepn} closeDrawer={() => setDrawerOpen(false)} />
             {children}
         </div>
     );

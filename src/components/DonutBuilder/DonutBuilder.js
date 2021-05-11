@@ -15,7 +15,7 @@ const ingredients ={
     return ( 
         <div className={classes.DonutBuilder}>
             <DonutPreview ingredients={ingredients}/>
-            <DonutControls/>
+            <DonutControls ingredients={ingredients}/>
         </div>
      );
 }
