@@ -1,14 +1,15 @@
+import Drawer from "../Drower/Drower"
 import Toolbar from "../Toolbar/Toolbar"
 
-const Layout = ({children}) => {
-    return ( 
+const Layout = ({ children }) => {
+    return (
         <div>
-            <div>
-                <Toolbar/>
-            </div>
+
+            <Toolbar />
+            <Drawer />
             {children}
         </div>
-     );
+    );
 }
- 
+
 export default Layout;
