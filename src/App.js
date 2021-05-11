@@ -4,6 +4,7 @@ import './App.css';
 import Checkout from './components/Checkout/Checkout';
 import DonutBuilder from './components/DonutBuilder/DonutBuilder';
 import Layout from './components/Layout/Layout';
+import Orders from './components/Orders/Orders';
 
 
   const App = () =>{
@@ -14,6 +15,7 @@ import Layout from './components/Layout/Layout';
          <Switch>
            <Route path="/" component={DonutBuilder}/>
            <Route path="/checkout" component={Checkout}/>
+           <Route path="/orders" component={Orders}/>
            <Redirect to="/"/>
          </Switch>
        </Layout>
