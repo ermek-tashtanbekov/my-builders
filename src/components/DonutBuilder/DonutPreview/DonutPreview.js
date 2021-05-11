@@ -1,7 +1,7 @@
 import classes from './DonutPreview.module.css';
 import plate from '../../../img/plate.png'
 import DonutIngredient from '../DonutIngredient/DonutIngredient';
-const DonutPreview = ({ingredients}) => {
+const DonutPreview = ({ingredients, price}) => {
     const result = []
 
     for(const ingredient in ingredients){
@@ -14,6 +14,7 @@ const DonutPreview = ({ingredients}) => {
             <div className={classes.plate}  style={{ backgroundImage: `url(${plate})`, backgroundPosition: "center", backgroundSize: 'cover', witdth: "520px", height: "400px", marginRight: "-3px" }}>
                 <div className={classes.ingredients }>{result}</div>
             </div>
+            <div className={classes.price}>{price.toFixed(1)}som</div>
         </div>
      );
 }

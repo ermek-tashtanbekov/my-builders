@@ -1,3 +1,5 @@
+import React from 'react'
+
 import red from '../../../img/red.svg'
 import blue from '../../../img/blue.svg'
 import brown from '../../../img/brown.svg'
@@ -5,7 +7,7 @@ import black from '../../../img/black.svg'
 import pink from '../../../img/pink.svg'
 import violet from '../../../img/violet.svg'
 import classes from './DonutIngredient.module.css'
-import React from 'react'
+
 
 const DonutIngredient = ({type, fixed}) => {
     const types = {
