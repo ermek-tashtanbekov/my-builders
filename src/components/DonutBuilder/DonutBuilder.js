@@ -18,12 +18,18 @@ function addIngredient(type){
     newIngredients[type]++;
     setIngredients(newIngredients)
 }
+function removeIngredient(type){
+    const newIngredients = { ...ingredients };
+    newIngredients[type]--;
+    setIngredients(newIngredients)
+}
 
     return ( 
         <div className={classes.DonutBuilder}>
             <DonutPreview ingredients={ingredients}/>
             <DonutControls ingredients={ingredients}
             addIngredient={addIngredient}
+            removeIngredient={ removeIngredient}
             />
         </div>
      );
