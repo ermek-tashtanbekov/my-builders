@@ -14,7 +14,10 @@ const DonutControls = ({ingredients, addIngredient,removeIngredient, startOrderi
         <div className={classes.DonutControls}>
            <div>
            {results}
+           <div className={classes.Button}>
            <Button onClick={() => startOrdering()} disabled={!total}>Order</Button>
+           </div>
+           
            </div> 
         </div>
      );

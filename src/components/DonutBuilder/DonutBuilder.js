@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Button from "../UI/Button/Button";
 import Modal from "../UI/Modal/Modal";
 import classes from "./DonutBuilder.module.css";
 import DonutControls from "./DonutControls/DonutControls";
 import DonutPreview from "./DonutPreview/DonutPreview";
+import OrderSummary from "./OrderSummary/OrderSummary";
 
 const DonutBuilder = () => {
     const [ingredients, setIngredients] = useState({})
@@ -20,21 +22,21 @@ const DonutBuilder = () => {
 
 
     useEffect(() =>
-       axios.get('https://work-1-b6be6-default-rtdb.firebaseio.com/defauld.json')
-       .then(response =>{
-           setPrice(response.data.price);
-           setIngredients(response.data.ingredients)
-       }),[]
+        axios.get('https://work-1-b6be6-default-rtdb.firebaseio.com/defauld.json')
+            .then(response => {
+                setPrice(response.data.price);
+                setIngredients(response.data.ingredients)
+            }), []
     )
 
-    
+
     function startOrdering() {
         setOrdering(true);
-      }
-    
-      function stopOrdering() {
+    }
+
+    function stopOrdering() {
         setOrdering(false);
-      }
+    }
 
 
     function addIngredient(type) {
@@ -42,7 +44,7 @@ const DonutBuilder = () => {
         newIngredients[type]++;
         setPrice(price + prices[type]);
         setIngredients(newIngredients);
-       }
+    }
     function removeIngredient(type) {
         if (ingredients[type]) {
             const newIngredients = { ...ingredients };
@@ -55,17 +57,22 @@ const DonutBuilder = () => {
 
     return (
         <div className={classes.DonutBuilder}>
-            <DonutPreview ingredients={ingredients} 
-            price={price}/>
+            <DonutPreview ingredients={ingredients}
+                price={price} />
             <DonutControls ingredients={ingredients}
                 addIngredient={addIngredient}
                 removeIngredient={removeIngredient}
                 startOrdering={startOrdering}
             />
 
-           
+
             <Modal show={ordering} cancel={stopOrdering}>
-                hello
+                <OrderSummary ingredients={ingredients} price={price} />
+
+                <div className={classes.Button}>
+                    <Button green>Checkout</Button>
+                    <Button onClick={() => stopOrdering()} >Cancel</Button>
+                </div>
             </Modal>
         </div>
     );

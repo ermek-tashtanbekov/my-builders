@@ -9,3 +9,7 @@
     height: 550px;
      
     }
+    .Button{
+        display: flex;
+        justify-content: center;
+    }
