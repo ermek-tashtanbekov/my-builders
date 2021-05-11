@@ -34,6 +34,7 @@ const DonutIngredient = ({type, fixed}) => {
         violet: {
           backgroundImage: `url(${violet})`,
           width: "60px",
+          backgroundSize: "cover",
           height: "60px"
         },
         pink: {

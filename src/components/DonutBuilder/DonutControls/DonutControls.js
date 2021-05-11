@@ -1,11 +1,11 @@
 import DonutControl from "./DonutControl/DonutControl";
 import classes from "./DonutControls.module.css";
 
-const DonutControls = ({ingredients}) => {
+const DonutControls = ({ingredients, addIngredient}) => {
     const results = [];
 
     for (const ingredient in ingredients) {
-         results.push(<DonutControl type={ingredient}/>)
+         results.push(<DonutControl type={ingredient} addIngredient={addIngredient}/>)
     }
         
     return ( 
