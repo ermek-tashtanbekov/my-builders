@@ -10,7 +10,7 @@ import Layout from './components/Layout/Layout';
     return (
       <div className="App">
        <Layout>
-         <DonutBuilder/>
+         {/* <DonutBuilder/> */}
          <Switch>
            <Route path="/" component={DonutBuilder}/>
            <Route path="/checkout" component={Checkout}/>
