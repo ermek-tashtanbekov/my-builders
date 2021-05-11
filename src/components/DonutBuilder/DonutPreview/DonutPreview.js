@@ -1,11 +1,12 @@
 import classes from './DonutPreview.module.css';
 import plate from '../../../img/plate.png'
+import DonutIngredient from '../DonutIngredient/DonutIngredient';
 const DonutPreview = ({ingredients}) => {
     const result = []
 
     for(const ingredient in ingredients){
         for(let i = 0 ; i < ingredients[ingredient]; i++){
-            result.push(ingredient)
+            result.push(<DonutIngredient type={ingredient} />)
         }
     }
     return ( 
