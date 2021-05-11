@@ -13,3 +13,8 @@
     z-index: 1;
     height: 70px;
   }
+  @media (max-width: 680px) {
+    .Toolbar nav {
+        display: none;
+    }
+  }
