@@ -16,3 +16,9 @@
         margin-right: 18px;
         background-position: center
     }
+    .ingredients {
+        width: 380px;
+        height: 380px;
+        border-radius: 100%;
+        position: relative;
+      } 
