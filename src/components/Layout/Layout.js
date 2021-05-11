@@ -1,4 +1,4 @@
-import Drawer from "../Drower/Drower"
+import Drawer from "../Drower/Drawer"
 import Toolbar from "../Toolbar/Toolbar"
 
 const Layout = ({ children }) => {
