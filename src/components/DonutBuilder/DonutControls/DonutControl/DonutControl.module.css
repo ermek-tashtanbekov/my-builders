@@ -1,0 +1,11 @@
+.DonutControl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: .5rem 0;
+    
+}
+.DonutControl > .ingredient div {
+    position: static;
+    margin: 0 .5rem;
+  }

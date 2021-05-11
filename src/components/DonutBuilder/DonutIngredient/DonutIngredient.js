@@ -7,7 +7,7 @@ import violet from '../../../img/violet.svg'
 import classes from './DonutIngredient.module.css'
 
 
-const DonutIngredient = ({type}) => {
+const DonutIngredient = ({type, fixed}) => {
     const types = {
         red: {
           backgroundImage: `url(${red}) `,
@@ -66,14 +66,14 @@ const DonutIngredient = ({type}) => {
       }
     
       // Get random position for this ingredient.
-    //   if (!fixed) {
+      if (!fixed) {
         const position = getPosition(types[type].width);
         types[type].top = position.top + "px";
         types[type].left = position.left + "px";
     
         // Get random rotation for this ingredient.
         types[type].transform = `rotate(${Math.round(Math.random() * 360)}deg)`;
-    //   }
+      }
     
 
     return ( 
