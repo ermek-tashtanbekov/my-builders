@@ -5,7 +5,7 @@ import black from '../../../img/black.svg'
 import pink from '../../../img/pink.svg'
 import violet from '../../../img/violet.svg'
 import classes from './DonutIngredient.module.css'
-
+import React from 'react'
 
 const DonutIngredient = ({type, fixed}) => {
     const types = {
@@ -82,4 +82,4 @@ const DonutIngredient = ({type, fixed}) => {
      );
 }
  
-export default DonutIngredient;
+export default React.memo(DonutIngredient);
