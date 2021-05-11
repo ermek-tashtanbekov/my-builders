@@ -21,4 +21,18 @@
         height: 380px;
         border-radius: 100%;
         position: relative;
+      }
+      .price{
+        font-size: 25px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: rgb(19, 65, 190);
+        border-radius: 50px;
+        color: lavender;
+        margin-bottom: 15px;
+     
+         
       } 

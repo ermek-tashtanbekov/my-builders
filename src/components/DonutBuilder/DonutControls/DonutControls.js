@@ -1,7 +1,7 @@
 import DonutControl from "./DonutControl/DonutControl";
 import classes from "./DonutControls.module.css";
 
-const DonutControls = ({ingredients, addIngredient,removeIngredient }) => {
+const DonutControls = ({ingredients, addIngredient,removeIngredient, startOrdering }) => {
     const results = [];
 
     for (const ingredient in ingredients) {
@@ -10,7 +10,10 @@ const DonutControls = ({ingredients, addIngredient,removeIngredient }) => {
         
     return ( 
         <div className={classes.DonutControls}>
-            {results}
+           <div>
+           {results}
+           <button onClick={() => startOrdering()}>Order</button>
+           </div> 
         </div>
      );
 }

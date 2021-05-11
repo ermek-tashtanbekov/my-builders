@@ -7,7 +7,8 @@ import DonutPreview from "./DonutPreview/DonutPreview";
 
 const DonutBuilder = () => {
     const [ingredients, setIngredients] = useState({})
-    const [price, setPrice] = useState(0)
+    const [price, setPrice] = useState(0);
+    const [ordering, setOrdering] = useState(false);
     const prices = {
         red: 15,
         blue: 25,
@@ -25,6 +26,16 @@ const DonutBuilder = () => {
            setIngredients(response.data.ingredients)
        }),[]
     )
+
+    
+    function startOrdering() {
+        setOrdering(true);
+      }
+    
+      function stopOrdering() {
+        setOrdering(false);
+      }
+
 
     function addIngredient(type) {
         const newIngredients = { ...ingredients };
@@ -49,10 +60,11 @@ const DonutBuilder = () => {
             <DonutControls ingredients={ingredients}
                 addIngredient={addIngredient}
                 removeIngredient={removeIngredient}
+                startOrdering={startOrdering}
             />
 
            
-            <Modal>
+            <Modal show={ordering} cancel={stopOrdering}>
                 hello
             </Modal>
         </div>
