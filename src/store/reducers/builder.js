@@ -4,38 +4,38 @@ const initialState = {
     ingredients: {
     },
     price: 0,
-  };
-  const prices = {
-    tomato: 3.5,
-    salami: 4,
-    greenOlive: .3,
-    blackOlive: .3,
-    redPepper: 2,
-    yellowPepper: 1,
-  };
-  
-  const builder = (state = initialState, action) => {
+};
+const prices = {
+    red: 15,
+    blue: 25,
+    brown: 53,
+    black: 32,
+    pink: 25,
+    violet: 47
+};
+
+const builder = (state = initialState, action) => {
     const newState = { ...state };
-  
+
     switch (action.type) {
-      case ADD_INGREDIENT:
-        newState.ingredients[action.ingredient]++;
-        newState.price += prices[action.ingredient];
-        break;
-      case REMOVE_INGREDIENT:
-        newState.ingredients[action.ingredient]--;
-        newState.price -= prices[action.ingredient];
-        break;
-      case SET_INGREDIENTS:
-        newState.ingredients = action.data.ingredients;
-        newState.price = action.data.price;
-        break;
-    
-      default:
-        break;
+        case ADD_INGREDIENT:
+            newState.ingredients[action.ingredient]++;
+            newState.price += prices[action.ingredient];
+            break;
+        case REMOVE_INGREDIENT:
+            newState.ingredients[action.ingredient]--;
+            newState.price -= prices[action.ingredient];
+            break;
+        case SET_INGREDIENTS:
+            newState.ingredients = action.data.ingredients;
+            newState.price = action.data.price;
+            break;
+
+        default:
+            break;
     }
-  
+
     return newState;
-  }
-  
-  export default builder;
+}
+
+export default builder;

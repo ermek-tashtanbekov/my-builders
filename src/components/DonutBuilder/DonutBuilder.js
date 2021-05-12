@@ -1,4 +1,4 @@
-import axios from "axios";
+
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { load } from "../../store/action/builder";
@@ -48,7 +48,7 @@ const DonutBuilder = ({ history }) => {
     function finishOrdering() {
         setOrdering(false);
         // loadDefaults()
-        history.push('/checkout');
+         history.push('/checkout');
     }
 
 
