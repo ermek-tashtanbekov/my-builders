@@ -1,7 +1,7 @@
 
 import axios from "../.././axios";
-import {  useState } from "react";
-import { useSelector } from "react-redux";
+import {  useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Button from "../UI/Button/Button";
 import Modal from "../UI/Modal/Modal";
 import withAxios from "../withAxios";
@@ -9,15 +9,17 @@ import classes from "./DonutBuilder.module.css";
 import DonutControls from "./DonutControls/DonutControls";
 import DonutPreview from "./DonutPreview/DonutPreview";
 import OrderSummary from "./OrderSummary/OrderSummary";
+import { load } from "../../store/action/builder";
+// import { load } from "../../store/action/orders";
 
 const DonutBuilder = ({ history }) => {
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const ingredients = useSelector(state => state.builder.ingredients);
     const price = useSelector(state => state.builder.price);
     const [ordering, setOrdering] = useState(false);
 
 
-    // useEffect(() => dispatch(load()), []);
+    useEffect(() => dispatch(load()), [dispatch]);
 
 
     // useEffect(loadDefaults, []);
@@ -65,10 +67,10 @@ const DonutBuilder = ({ history }) => {
 
             <Modal show={ordering} cancel={stopOrdering}>
                 <OrderSummary ingredients={ingredients}
-                    price={price} />
+                     price={price} /> 
 
                 <div className={classes.Button}>
-                    <Button onClick={() => finishOrdering()} green>Checkout</Button>
+                    <Button onClick={() => finishOrdering()} green="green">Checkout</Button>
                     <Button onClick={() => stopOrdering()} >Cancel</Button>
                 </div>
             </Modal>

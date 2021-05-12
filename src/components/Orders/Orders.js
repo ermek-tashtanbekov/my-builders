@@ -9,19 +9,16 @@ import { load } from "../../store/action/orders";
 const Orders = () => {
     const dispatch = useDispatch();
     const orders = useSelector(state => state.orders);
-   
-
- useEffect(() =>{
-     dispatch(load())
- }, [])
-
+  
+    useEffect(() => dispatch(load()), [dispatch]);
+  
     const results = orders.map(order => <Order key={order.id} {...order} />);
-
+  
     return (
-        <div>
-            {results}
-        </div>
+      <div>
+        {results}
+      </div>
     );
-}
-
-export default withAxios(Orders, axios);
+  }
+  
+  export default withAxios(Orders, axios);

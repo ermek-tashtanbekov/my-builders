@@ -14,6 +14,7 @@
   .CheckoutForm > div > label::after {
     content: ":";
     margin-right: 1rem;
+    font-weight: 700;
   }
   .CheckoutForm > div > input {
     border-radius: 1rem;

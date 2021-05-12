@@ -6,7 +6,7 @@ const DonutPreview = ({ingredients, price}) => {
 
     for(const ingredient in ingredients){
         for(let i = 0 ; i < ingredients[ingredient]; i++){
-            result.push(<DonutIngredient type={ingredient} />)
+            result.push(<DonutIngredient key={ingredient + i} type={ingredient} />)
         }
     }
     return ( 
@@ -14,7 +14,7 @@ const DonutPreview = ({ingredients, price}) => {
             <div className={classes.plate}  style={{ backgroundImage: `url(${plate})`, backgroundPosition: "center", backgroundSize: 'cover', witdth: "520px", height: "400px", marginRight: "-3px" }}>
                 <div className={classes.ingredients }>{result}</div>
             </div>
-            <div className={classes.price}>{price.toFixed(1)}som</div>
+            <div className={classes.price}>{price}som</div>
         </div>
      );
 }
