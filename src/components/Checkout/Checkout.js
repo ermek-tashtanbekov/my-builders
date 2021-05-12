@@ -1,16 +1,19 @@
 import classes from "./Checkout.module.css";
 import DonutPreview from "../DonutBuilder/DonutPreview/DonutPreview"
 import CheckoutForm from "./CheckoutForm/CheckoutForm"
-import axios from "axios";
+import axios from "../.././axios";
+import { useSelector } from "react-redux";
 
 const Checkout = ({ history }) => {
+    const ingredients = useSelector(state => state.builder.ingredients);
+    const price = useSelector(state => state.builder.price);
     function cancelCallback() {
         history.replace('/')
     }
     function submitCallback(event) {
         const data = new FormData(event.target);
 
-        axios.post('https://work-1-b6be6-default-rtdb.firebaseio.com/orders.json', {
+        axios.post('/orders.json', {
             name: data.get('name'),
             address: data.get('address'),
             phone: data.get('phone'),
@@ -45,4 +48,4 @@ const Checkout = ({ history }) => {
     );
 }
 
-export default Checkout;
+export default  Checkout;

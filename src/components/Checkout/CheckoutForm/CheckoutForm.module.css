@@ -8,6 +8,8 @@
   .CheckoutForm > div {
     flex: 0 0 100%;
     padding: .2rem 1rem;
+    display: flex;
+    flex-direction: column;
   }
   .CheckoutForm > div > label::after {
     content: ":";
@@ -23,3 +25,7 @@
     outline: none;
     border-color: darkgray;
   } 
+  .Button{
+    display: flex;
+    justify-content: center;
+  }
