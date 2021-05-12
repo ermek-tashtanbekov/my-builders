@@ -1,9 +1,11 @@
 
+import axios from "../.././axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { load } from "../../store/action/builder";
 import Button from "../UI/Button/Button";
 import Modal from "../UI/Modal/Modal";
+import withAxios from "../withAxios";
 import classes from "./DonutBuilder.module.css";
 import DonutControls from "./DonutControls/DonutControls";
 import DonutPreview from "./DonutPreview/DonutPreview";
@@ -75,7 +77,7 @@ const DonutBuilder = ({ history }) => {
     );
 }
 
-export default DonutBuilder;
+export default withAxios(DonutBuilder, axios);
 
 
 
