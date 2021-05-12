@@ -18,7 +18,7 @@ const DonutBuilder = ({ history }) => {
     const [ordering, setOrdering] = useState(false);
 
 
-    useEffect(() => dispatch(load()), []);
+    // useEffect(() => dispatch(load()), []);
 
 
     // useEffect(loadDefaults, []);
