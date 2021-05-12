@@ -1,8 +1,7 @@
 
 import axios from "../.././axios";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { load } from "../../store/action/builder";
 import Button from "../UI/Button/Button";
 import Modal from "../UI/Modal/Modal";
 import withAxios from "../withAxios";
@@ -12,7 +11,7 @@ import DonutPreview from "./DonutPreview/DonutPreview";
 import OrderSummary from "./OrderSummary/OrderSummary";
 
 const DonutBuilder = ({ history }) => {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const ingredients = useSelector(state => state.builder.ingredients);
     const price = useSelector(state => state.builder.price);
     const [ordering, setOrdering] = useState(false);
