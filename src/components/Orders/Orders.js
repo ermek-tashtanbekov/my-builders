@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Order from "./Order/Order";
 import withAxios from "../withAxios";
-import { load } from "../../store/action/builder";
+import { load } from "../../store/action/orders";
 
 
 const Orders = () => {
