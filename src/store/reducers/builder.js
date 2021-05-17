@@ -2,8 +2,7 @@ import { ADD_INGREDIENT, REMOVE_INGREDIENT, SET_INGREDIENTS } from "../action/ty
 
 
 const initialState = {
-    ingredients: {
-    },
+    ingredients: {},
     price: 0,
 };
 const prices = {

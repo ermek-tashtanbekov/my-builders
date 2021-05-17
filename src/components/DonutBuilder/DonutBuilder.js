@@ -18,7 +18,6 @@ const DonutBuilder = ({ history }) => {
     const price = useSelector(state => state.builder.price);
     const [ordering, setOrdering] = useState(false);
 
-
     useEffect(() => dispatch(load()), [dispatch]);
 
 
@@ -79,6 +78,74 @@ const DonutBuilder = ({ history }) => {
 }
 
 export default withAxios(DonutBuilder, axios);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

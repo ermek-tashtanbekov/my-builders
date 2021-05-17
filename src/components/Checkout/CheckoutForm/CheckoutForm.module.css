@@ -5,12 +5,12 @@
     justify-content: center;
     text-align: center;
   }
-  .CheckoutForm > div {
+  .CheckoutForm  div {
     flex: 0 0 100%;
     padding: .2rem 1rem;
     display: flex;
     flex-direction: column;
-  }
+}
   .CheckoutForm > div > label::after {
     content: ":";
     margin-right: 1rem;
