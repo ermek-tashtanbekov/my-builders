@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Order from "./Order/Order";
 import withAxios from "../withAxios";
 import { load } from "../../store/action/orders";
+import Loading from "../../Loading/Loading";
 
 
 const Orders = () => {
@@ -16,7 +17,7 @@ const Orders = () => {
   
     return (
       <div>
-        {results}
+        {results.length > 0 ? results : <Loading/>}
       </div>
     );
   }

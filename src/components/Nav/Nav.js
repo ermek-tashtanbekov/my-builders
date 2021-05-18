@@ -7,6 +7,7 @@ const Nav = () => {
       <ul className={classes.Nav}>
         <NavItem url="/" exact>Builder</NavItem>
         <NavItem url="/orders">Orders</NavItem>
+        <NavItem url="/s">Spiner</NavItem>
       </ul>
    
   );

@@ -15,7 +15,7 @@ const DonutControls = ({ingredients, startOrdering }) => {
            <div>
            {results}
            <div className={classes.Button}>
-           <Button onClick={() => startOrdering()} disabled={!total}>Order</Button>
+           <Button onClick={() => startOrdering()} disabled={!total}><span>Order</span></Button>
            </div>
            
            </div> 

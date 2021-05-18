@@ -12,7 +12,7 @@ const DonutPreview = ({ingredients, price}) => {
     return ( 
         <div className={classes.DonutPreview} >
             <div className={classes.plate}  style={{ backgroundImage: `url(${plate})`, backgroundPosition: "center", backgroundSize: 'cover', witdth: "520px", height: "400px", marginRight: "-3px" }}>
-                <div className={classes.ingredients }>{result}</div>
+                <div className={classes.ingredients }>{result }</div>
             </div>
             <div className={classes.price}>{price}som</div>
         </div>

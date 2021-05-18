@@ -57,7 +57,7 @@ const DonutBuilder = ({ history }) => {
 
     return (
         <div className={classes.DonutBuilder}>
-            <DonutPreview ingredients={ingredients}
+            <DonutPreview  ingredients={ingredients}
                 price={price} />
             <DonutControls ingredients={ingredients}
                 startOrdering={startOrdering}
