@@ -5,6 +5,7 @@ import Checkout from './components/Checkout/Checkout';
 import DonutBuilder from './components/DonutBuilder/DonutBuilder';
 import Layout from './components/Layout/Layout';
 import Orders from './components/Orders/Orders';
+import Loading from './Loading/Loading';
 
 
 
@@ -17,6 +18,7 @@ import Orders from './components/Orders/Orders';
            <Route path="/" component={DonutBuilder} exact/>
            <Route path="/checkout" component={Checkout}/>
            <Route path="/orders" component={Orders}/>
+           <Route path="/s" component={Loading}/>
            <Redirect to="/"/>
          </Switch>
        </Layout>
