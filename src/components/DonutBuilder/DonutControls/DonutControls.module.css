@@ -5,6 +5,7 @@
     /* background: linear-gradient(170deg, #1180ac -17.33%, rgba(46, 121, 175, 0.753) 75.91%),
     linear-gradient(-45deg, #FFFFFF, #FFFFFF); */
     background-image: linear-gradient(to top, #d9afd9 0%, #58d1df 100%);
+    /* background-image: linear-gradient(to top, #5ebcc7  0%, #9b7c9b  100%); */
     color: white;
     text-align: center;
     width: 450;
@@ -25,10 +26,14 @@
         color: #fff;
         font-weight: 700;
         font-size: 15px;
-        background-color: #222;
+        background-color: white;
+        /* background: linear-gradient(170deg, #065a9e -17.33%, rgba(7, 92, 153, 0.397) 75.91%),
+        linear-gradient(-45deg, #FFFFFF, #FFFFFF); */
+        outline: none;
         padding: 17px 60px;
         margin: 0 auto;
         box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+        border-radius: 15px;
     }
     .Button span{
     position: relative; 
@@ -41,7 +46,7 @@
         top: 0;
         height: 490%;
         width: 140%;
-        background: #78c7d2;
+        background-image: linear-gradient(to top, #bd14bd 0%, #0892a1 100%);
         -webkit-transition: all .5s ease-in-out;
         transition: all .5s ease-in-out;
         -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
