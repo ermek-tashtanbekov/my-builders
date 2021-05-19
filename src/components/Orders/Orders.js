@@ -5,6 +5,7 @@ import Order from "./Order/Order";
 import withAxios from "../withAxios";
 import { load } from "../../store/action/orders";
 import Loading from "../../Loading/Loading";
+import classes from "./Orders.module.css";
 
 
 const Orders = () => {
@@ -16,7 +17,7 @@ const Orders = () => {
     const results = orders.map(order => <Order key={order.id} {...order} />);
   
     return (
-      <div>
+      <div className={classes.Orders}>
         {results.length > 0 ? results : <Loading/>}
       </div>
     );

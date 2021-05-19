@@ -6,9 +6,13 @@ const Order = ({ name, phone, address, ingredients, price }) => {
 
   return (
     <div className={classes.Order}>
-      <div>{name}, {phone}, {address}</div>
+      <div className={classes.test}>
+        <h1>{name}</h1>
+        <span>{phone}</span> 
+        <h5>{address}</h5>
       <div>{outputIngredients}</div>
-      <strong>{price}</strong>
+      <strong>{price}сом</strong>
+      </div>
     </div>
   );
 }

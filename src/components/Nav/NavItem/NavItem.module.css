@@ -13,6 +13,7 @@
   .NavItem a.active {
     border-color: white;
   }
+  
   @media (max-width: 680px) {
     .NavItem a {
       border-right: 10px solid transparent;
