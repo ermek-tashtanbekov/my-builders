@@ -7,6 +7,7 @@ import classes from "./Auth.module.css";
 import Button from "../UI/Button/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useLocation } from "react-router-dom";
+import Loading from "../../Loading/Loading";
 
 export default withAxios(() => {
   const dispatch = useDispatch();
@@ -23,15 +24,18 @@ export default withAxios(() => {
     event.preventDefault();
   }
 
-  let formOutput = "Loading...";
+  let formOutput = <Loading/>;
   if (!loading) {
     formOutput = (
-      <form onSubmit={formSubmitted}>
+      <form onSubmit={formSubmitted} className={classes.form}>
         <h1>Welcome</h1>
-        <input type="email" placeholder="E-mail" name="email" required />
+        <input type="email" placeholder="E-mail" name="email" required  className={classes.inputone}/>
         <input type="password" placeholder="Password" name="password" required minLength="6" />
+        <div className={classes.Button}>
         <Button click={() => setMethod('signin')} green>Sign in</Button>
         <Button click={() => setMethod('signup')} red>Sign up</Button>
+        </div>
+        
       </form>
     );
   }
