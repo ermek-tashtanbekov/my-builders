@@ -1,21 +1,25 @@
-import React, { useState } from "react";
-import axios from "../../axios";
-import { start, auth } from "../../store/action/auth";
+// import React, { useState } from "react";
+// import axios from "../../axios";
 // import { start, auth } from "../../store/actions/auth";
-import withAxios from "../withAxios";
+// import withAxios from "../withAxios";
+// import classes from "./Auth.module.css";
+// import Button from "../UI/Button/Button";
+// import { useDispatch, useSelector } from "react-redux";
+// import { Redirect, useLocation } from "react-router-dom";
+
 import classes from "./Auth.module.css";
-import Button from "../UI/Button/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect, useLocation } from "react-router-dom";
+import Button from "../UI/Button/Button";
+import { auth, start } from "../../store/action/auth";
+import withAxios from "../withAxios";
+import { Redirect, useLocation } from "react-router";
+import axios from "axios";
 import Loading from "../../Loading/Loading";
 
 export default withAxios(() => {
   const dispatch = useDispatch();
-  const [ method, setMethod ] = useState("signin");
   const { loading, error, token } = useSelector(state => state.auth);
   const location = useLocation();
-
-
 
   const formSubmitted = (event) => {
     start(dispatch);
