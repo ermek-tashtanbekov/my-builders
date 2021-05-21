@@ -35,7 +35,7 @@ margin-top: -6em;
 
 @keyframes colors {
 0% {
-  border-color: #3091e6;
+  border-color: #0f7fe0;
   border-bottom-color: transparent;
 }
 33% {
@@ -43,11 +43,11 @@ margin-top: -6em;
   border-bottom-color: transparent;
 }
 66% {
-  border-color: #00bbd5;
+  border-color: #05cae4;
   border-bottom-color: transparent;
 }
 100% {
-  border-color: #3091e6;
+  border-color: #24dd61;
   border-bottom-color: transparent;
 }
 }

@@ -1,4 +1,3 @@
-
 import axios from "../.././axios";
 import {  useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,10 +9,11 @@ import DonutControls from "./DonutControls/DonutControls";
 import DonutPreview from "./DonutPreview/DonutPreview";
 import OrderSummary from "./OrderSummary/OrderSummary";
 import { load } from "../../store/action/builder";
-// import { load } from "../../store/action/orders";
+
 
 const DonutBuilder = ({ history }) => {
     const dispatch = useDispatch();
+    const isAuthenticated = useSelector(state => state.auth.token !== null)
     const ingredients = useSelector(state => state.builder.ingredients);
     const price = useSelector(state => state.builder.price);
     const [ordering, setOrdering] = useState(false);
@@ -41,7 +41,13 @@ const DonutBuilder = ({ history }) => {
 
 
     function startOrdering() {
-        setOrdering(true);
+        if(isAuthenticated){
+            setOrdering(true)
+        }
+        else{
+            history.push('/auth')
+        }
+        // setOrdering(true);
     }
 
     function stopOrdering() {
