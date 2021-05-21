@@ -3,7 +3,9 @@ import { useDispatch } from "react-redux";
 import { logout } from "../../store/action/auth";
 
 
-export default ({ history }) => {
+
+
+export default function Logout({ history }) {
   const dispatch = useDispatch();
 
   useEffect(() => {

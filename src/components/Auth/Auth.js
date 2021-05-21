@@ -11,7 +11,7 @@ import Loading from "../../Loading/Loading";
 
 export default withAxios(() => {
   const dispatch = useDispatch();
-  const [ method, setMethod ] = useState(null);
+  const [ method, setMethod ] = useState("signin");
   const { loading, error, token } = useSelector(state => state.auth);
   const location = useLocation();
 
