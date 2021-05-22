@@ -7,7 +7,7 @@ const DonutControls = ({ingredients, startOrdering }) => {
      let total = 0;
     for (const ingredient in ingredients) {
         total += ingredients[ingredient]
-         results.push(<DonutControl type={ingredient}  count={ingredients[ingredient]}/>)
+         results.push(<DonutControl type={ingredient} key={ingredient + ingredients} count={ingredients[ingredient]}/>)
     }
         
     return ( 
