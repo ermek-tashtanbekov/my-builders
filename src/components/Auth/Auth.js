@@ -32,15 +32,18 @@ export default withAxios(() => {
     event.preventDefault();
   }
 
-  let formOutput = <Loading/>;
+  let formOutput = <Loading />;
   if (!loading) {
     formOutput = (
-      <form onSubmit={formSubmitted}>
+      <form onSubmit={formSubmitted} className={classes.form}>
         <h1>Welcome</h1>
         <input type="email" placeholder="E-mail" name="email" required />
         <input type="password" placeholder="Password" name="password" required minLength="6" />
-        <Button>Sign in</Button>
-        <Button>Sign up</Button>
+        <div className={classes.Button}>
+          <Button green>Sign in</Button>
+          <Button>Sign up</Button>
+        </div>
+
       </form>
     );
   }
@@ -50,7 +53,7 @@ export default withAxios(() => {
     errorOutput = <h4 className={classes.error}>{error.message}</h4>;
   }
 
-  const [,redirect] = location.search.split('?');
+  const [, redirect] = location.search.split('?');
   let redirectOutput = null;
   if (token !== null) {
     redirectOutput = <Redirect to={"/" + redirect ? redirect : ""} />;
@@ -102,7 +105,7 @@ export default withAxios(() => {
 //         <Button click={() => setMethod('signin')} green>Sign in</Button>
 //         <Button click={() => setMethod('signup')} red>Sign up</Button>
 //         </div>
-        
+
 //       </form>
 //     );
 //   }
