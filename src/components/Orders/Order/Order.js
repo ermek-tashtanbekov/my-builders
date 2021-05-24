@@ -8,10 +8,10 @@ const Order = ({ name, phone, address, ingredients, price }) => {
     <div className={classes.Order}>
       <div className={classes.test}>
         <h1>{name}</h1>
-        <span>{phone}</span> 
+        <span>{phone}</span>
         <h5>{address}</h5>
-      <div>{outputIngredients}</div>
-      <strong>{price}сом</strong>
+        <li className={classes.or}>{outputIngredients}</li>
+        <strong>{price}сом</strong>
       </div>
     </div>
   );
