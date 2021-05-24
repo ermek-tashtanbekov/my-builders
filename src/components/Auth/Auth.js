@@ -36,7 +36,7 @@ export default withAxios(() => {
   if (!loading) {
     formOutput = (
       <form onSubmit={formSubmitted} className={classes.form}>
-        <h1>Welcome</h1>
+        <h1 className={classes.h1}>Welcome</h1>
         <input type="email" placeholder="E-mail" name="email" required />
         <input type="password" placeholder="Password" name="password" required minLength="6" />
         <div className={classes.Button}>

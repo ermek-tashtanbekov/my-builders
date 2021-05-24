@@ -14,7 +14,7 @@ form > input{
 .Button{
     display: flex;
 }
-h1 {
+.h1 {
     display: inline-block;
     font: bold 4.5em/1.5 Bebas, sans-serif;
     color: #5CA17C; 

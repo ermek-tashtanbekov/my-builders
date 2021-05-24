@@ -10,7 +10,7 @@
   background: linear-gradient(170deg, #3789cc -17.33%, rgba(46, 116, 167, 0.397) 75.91%),
   linear-gradient(-45deg, #FFFFFF, #FFFFFF);
   box-shadow: 0 0 10px rgba(0, 0, 0, .5);
-  z-index: 1;
+  z-index: 2;
   transition: transform .3s ease-out;
   }
   .open {
