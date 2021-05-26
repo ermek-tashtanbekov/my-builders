@@ -1,5 +1,5 @@
 import axios from "../.././axios";
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../UI/Button/Button";
 import Modal from "../UI/Modal/Modal";
@@ -21,33 +21,15 @@ const DonutBuilder = ({ history }) => {
     useEffect(() => dispatch(load()), [dispatch]);
 
 
-    // useEffect(loadDefaults, []);
-
-    //     function loadDefaults() {
-    //         axios
-    //             .get('https://work-1-b6be6-default-rtdb.firebaseio.com/defauld.json')
-    //             .then(response => {
-    //                 setPrice(response.data.price);
-
-    //                 // For arrays
-    //                 // setIngredients(Object.values(response.data.ingredients));
-    //                 // For objects
-    //                 setIngredients(response.data.ingredients);
-    //             });
-    //     }
-
-
-
-
 
     function startOrdering() {
-        if(isAuthenticated){
+        if (isAuthenticated) {
             setOrdering(true)
         }
-        else{
+        else {
             history.push('/auth')
         }
-        // setOrdering(true);
+        setOrdering(true);
     }
 
     function stopOrdering() {
@@ -56,14 +38,14 @@ const DonutBuilder = ({ history }) => {
     function finishOrdering() {
         setOrdering(false);
         // loadDefaults()
-         history.push('/checkout');
+        history.push('/checkout');
     }
 
 
 
     return (
         <div className={classes.DonutBuilder}>
-            <DonutPreview  ingredients={ingredients}
+            <DonutPreview ingredients={ingredients}
                 price={price} />
             <DonutControls ingredients={ingredients}
                 startOrdering={startOrdering}
@@ -72,7 +54,7 @@ const DonutBuilder = ({ history }) => {
 
             <Modal show={ordering} cancel={stopOrdering}>
                 <OrderSummary ingredients={ingredients}
-                     price={price} /> 
+                    price={price} />
 
                 <div className={classes.Button}>
                     <Button onClick={() => finishOrdering()} green="green">Checkout</Button>

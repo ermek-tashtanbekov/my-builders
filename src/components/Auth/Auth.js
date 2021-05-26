@@ -11,23 +11,21 @@ import classes from "./Auth.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../UI/Button/Button";
 import { auth, start } from "../../store/action/auth";
-import withAxios from "../withAxios";
 import { Redirect, useLocation } from "react-router";
-import axios from "axios";
 import Loading from "../../Loading/Loading";
 
-export default withAxios(() => {
+export default function Auth() {
   const dispatch = useDispatch();
   const { loading, error, token } = useSelector(state => state.auth);
   const location = useLocation();
 
   const formSubmitted = (event) => {
-    start(dispatch);
+    dispatch(start());
 
     const data = new FormData(event.target);
     const method = event.nativeEvent.submitter.innerText === "Sign in"
       ? "signin" : "signup";
-    auth(dispatch, method, data.get('email'), data.get('password'));
+    dispatch(auth(method, data.get('email'), data.get('password')));
 
     event.preventDefault();
   }
@@ -37,10 +35,10 @@ export default withAxios(() => {
     formOutput = (
       <form onSubmit={formSubmitted} className={classes.form}>
         <h1 className={classes.h1}>Welcome</h1>
-        <input type="email" placeholder="E-mail" name="email" required pattern="[a-zA-Z0-9._-+]+@[a-zA-Z0-9._-]+\.com"/>
+        <input type="email" placeholder="E-mail" name="email" required  />
         <input type="password" placeholder="Password" name="password" required minLength="6" />
         <div className={classes.Button}>
-          <Button green>Sign in</Button>
+          <Button green="green">Sign in</Button>
           <Button>Sign up</Button>
         </div>
 
@@ -66,7 +64,7 @@ export default withAxios(() => {
       {redirectOutput}
     </div>
   );
-}, axios);
+};
 
 
 
