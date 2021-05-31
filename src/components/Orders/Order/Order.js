@@ -7,9 +7,11 @@ const Order = ({ name, phone, address, ingredients, price }) => {
   return (
     <div className={classes.Order}>
       <div className={classes.test}>
-        <h1>{name}</h1>
-        <span>{phone}</span>
-        <h5>{address}</h5>
+        <div className={classes.border}>
+          <h1>Name : {name}</h1>
+          <h3>Phone : {phone}</h3>
+          <h4>Addres : {address}</h4>
+        </div>
         <li className={classes.or}>{outputIngredients}</li>
         <strong>{price}сом</strong>
       </div>
