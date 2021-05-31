@@ -2,27 +2,27 @@ import Button from "../../UI/Button/Button";
 import DonutControl from "./DonutControl/DonutControl";
 import classes from "./DonutControls.module.css";
 
-const DonutControls = ({ingredients, startOrdering }) => {
+const DonutControls = ({ ingredients, startOrdering }) => {
     const results = [];
-     let total = 0;
+    let total = 0;
     for (const ingredient in ingredients) {
         total += ingredients[ingredient]
-         results.push(<DonutControl type={ingredient} key={ingredient + ingredients} count={ingredients[ingredient]}/>)
+        results.push(<DonutControl type={ingredient} key={ingredient + ingredients} count={ingredients[ingredient]} />)
     }
-        
-    return ( 
+
+    return (
         <div className={classes.DonutControls}>
-           <div>
-           {results}
-           <div className={classes.Button}>
-           <Button onClick={() => startOrdering()} disabled={!total}><span>Order</span></Button>
-           </div>
-           
-           </div> 
+            <div>
+                {results}
+                <div className={classes.Button}>
+                    <Button onClick={() => startOrdering()} disabled={!total}><span>Order</span></Button>
+                </div>
+
+            </div>
         </div>
-     );
+    );
 }
- 
+
 export default DonutControls;
 
 
@@ -37,7 +37,7 @@ export default DonutControls;
 //         total += ingredients[ingredient]
 //          results.push(<DonutControl type={ingredient} addIngredient={addIngredient}  removeIngredient={ removeIngredient}  count={ingredients[ingredient]}/>)
 //     }
-        
+
 //     return ( 
 //         <div className={classes.DonutControls}>
 //            <div>
@@ -45,10 +45,10 @@ export default DonutControls;
 //            <div className={classes.Button}>
 //            <Button onClick={() => startOrdering()} disabled={!total}>Order</Button>
 //            </div>
-           
+
 //            </div> 
 //         </div>
 //      );
 // }
- 
+
 // export default DonutControls;

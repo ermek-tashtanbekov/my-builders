@@ -14,7 +14,7 @@ const DonutPreview = ({ingredients, price}) => {
             <div className={classes.plate}  style={{ backgroundImage: `url(${plate})`, backgroundPosition: "center", backgroundSize: 'cover', witdth: "520px", height: "400px", marginRight: "-3px" }}>
                 <div className={classes.ingredients }>{result }</div>
             </div>
-            <div className={classes.price}>{price.toFixed(0)}som</div>
+            <div className={classes.price}>{price.toFixed(0)} som</div>
         </div>
      );
 }
