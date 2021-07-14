@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Button from "../UI/Button/Button";
 import { auth, start } from "../../store/action/auth";
 import { Redirect, useLocation } from "react-router";
-import Loading from "../../Loading/Loading";
+import Loading from "../../components/UI/Loading/Loading";
 
 export default function Auth() {
   const dispatch = useDispatch();
